@@ -1,7 +1,7 @@
 const net = require('net');
 
 // establishes a connection with the game server
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection({
     host: 'localhost',
     port: 50541,
@@ -16,13 +16,13 @@ const connect = function () {
     conn.write('Name: LAB');
     // conn.write('Move: up');
 
-    setTimeout(() => {
-      conn.write('Move: up');
-    }, 500);
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    // }, 500);
 
-    setInterval(() => {
-      conn.write('Move: up');
-    }, 500);
+    // setInterval(() => {
+    //   conn.write('Move: up');
+    // }, 500);
   });
 
   //listening for data being broadcasted across server

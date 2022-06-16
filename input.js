@@ -12,31 +12,21 @@ const setupInput = (conn) => {
 };
 
 //handle ctrl + c user input for exiting program
-const handleUserInput = function (data) {
+const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
-  }
-  // console.log(data);
-
-  if (data === 'w') {
-    setInterval(() => {
-      connection.write('Move: up');
-    }, 50);
-  }
-  if (data === 'a') {
-    setInterval(() => {
-      connection.write('Move: left');
-    }, 50);
-  }
-  if (data === 's') {
-    setInterval(() => {
-      connection.write('Move: down');
-    }, 50);
-  }
-  if (data === 'd') {
-    setInterval(() => {
-      connection.write('Move: right');
-    }, 50);
+  } else if (data === 'w') {
+    connection.write('Move: up');
+  } else if (data === 'a') {
+    connection.write('Move: left');
+  } else if (data === 's') {
+    connection.write('Move: down');
+  } else if (data === 'd') {
+    connection.write('Move: right');
+  } else if (data === '1') {
+    connection.write('Say: Watch out!');
+  } else if (data === '2') {
+    connection.write('Say: Good game!');
   }
 };
 
