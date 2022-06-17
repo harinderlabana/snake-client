@@ -15,6 +15,7 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('Connection established.');
     conn.write(playerName);
+    conn.write(`Say: A wild ${playerName} has appeared!`);
   });
 
   //listening for data being broadcasted across server

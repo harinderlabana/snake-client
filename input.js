@@ -13,11 +13,12 @@ const setupInput = (conn) => {
   return stdin;
 };
 
-//handle ctrl + c user input for exiting program
 const handleUserInput = function(data) {
+  //handle ctrl + c user input for exiting program
   if (data === '\u0003') {
     process.exit();
   } else {
+    //keybinding logic
     for (const key in keyBindings) {
       if (key === data) {
         connection.write(keyBindings[key]);
