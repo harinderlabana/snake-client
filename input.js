@@ -1,3 +1,5 @@
+const {keyBindings} = require('./constants');
+
 let connection;
 
 //setup the user input
@@ -15,18 +17,12 @@ const setupInput = (conn) => {
 const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
-  } else if (data === 'w') {
-    connection.write('Move: up');
-  } else if (data === 'a') {
-    connection.write('Move: left');
-  } else if (data === 's') {
-    connection.write('Move: down');
-  } else if (data === 'd') {
-    connection.write('Move: right');
-  } else if (data === '1') {
-    connection.write('Say: Watch out!');
-  } else if (data === '2') {
-    connection.write('Say: Good game!');
+  } else {
+    for (const key in keyBindings) {
+      if (key === data) {
+        connection.write(keyBindings[key]);
+      }
+    }
   }
 };
 
